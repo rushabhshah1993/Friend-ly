@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 import Search from './../components/Search/Search';
 import FriendsList from './../components/FriendsList/FriendsList';
