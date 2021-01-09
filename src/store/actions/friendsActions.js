@@ -28,3 +28,10 @@ export const loadingFriends = () => {
         type: actions.LOADING_FRIENDS_LIST
     }
 }
+
+export const setSearchTerm = term => {
+    return {
+        type: actions.SET_SEARCH_TERM,
+        term: term
+    }
+}

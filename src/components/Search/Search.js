@@ -1,11 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Search = () => {
+import { setSearchTerm } from './../../store/actions/friendsActions';
+
+const Search = props => {
+    const inputChangeHandler = event => {
+        props.setSearchTerm(event.target.value);
+    }
+
     return (
         <div>
-            <input type="text" />
+            <input type="text" onChange={inputChangeHandler} />
         </div>
     )
 }
 
-export default Search;
+const mapDispatchToProps = dispatch => {
+    return {
+        setSearchTerm: term => dispatch(setSearchTerm(term))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Search);

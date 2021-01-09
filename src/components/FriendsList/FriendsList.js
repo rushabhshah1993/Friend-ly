@@ -16,9 +16,16 @@ const FriendsList = props => {
     }, [])
 
     if(props.friends.loading) friendsElement = `Loading...`; 
-    else if(!props.friends.loading && allFriends.length > 0) {
+    else if(!props.friends.loading && 
+        allFriends.length > 0 &&
+        props.friends.searchTerm.length === 0) {
         friendsElement = allFriends.map(friend => 
-        <Friend friend={friend} key={friend.id} />);
+            <Friend friend={friend} key={friend.id} />);
+    } else {
+        let filteredFriends = allFriends.filter(friend => 
+            friend.name.includes(props.friends.searchTerm));
+        friendsElement = filteredFriends.map(friend =>
+            <Friend friend={friend} key={friend.id} />);
     }
 
     return (
