@@ -1,0 +1,47 @@
+{
+  "name": "friend-ly",
+  "version": "1.0.0",
+  "description": "\"A friendly application to stow your friends' contacts\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rushabhshah1993/Friend-ly.git"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "friends",
+    "search"
+  ],
+  "author": "Rushabh Mulraj Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rushabhshah1993/Friend-ly/issues"
+  },
+  "homepage": "https://github.com/rushabhshah1993/Friend-ly#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-import": "^1.13.3",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.1",
+    "path": "^0.12.7",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.12.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
