@@ -6,6 +6,12 @@ import App from './pages/App';
 
 import store from './store/store';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar, faTrash } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faStar, farStar, faTrash);
+
 const main = (
     <Provider store={store}>
         <App />

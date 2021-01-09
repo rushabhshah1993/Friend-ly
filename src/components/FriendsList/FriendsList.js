@@ -30,7 +30,6 @@ const FriendsList = props => {
 
     return (
         <div>
-            FriendsList
             {friendsElement}
         </div>
     )
