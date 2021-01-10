@@ -1,0 +1,13 @@
+@import './../utils/variables.scss';
+
+.appContainer {
+    margin: 0 20%;
+}
+
+@media screen and
+(max-width: $breakpoint-phone) {
+    .appContainer {
+        margin: 0;
+        width: 100%;
+    }
+}
