@@ -72,3 +72,14 @@ export const addNewFriend = name => {
         })
     }
 }
+
+export const deleteFriend = id => {
+    return dispatch => {
+        axios.delete(`https://friend-ly-d2f6b-default-rtdb.firebaseio.com/allFriends/${id}.json`)
+            .then(() => {
+                dispatch(getFriendsList());
+            }).catch(error => {
+                console.log(error);
+            })
+    }
+}
