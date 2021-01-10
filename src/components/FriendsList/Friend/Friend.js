@@ -16,16 +16,22 @@ const Friend = props => {
     }
 
     return (
-        <div className={styles.friend} id={props.friend.id}>
+        <div className={styles.friendContainer} id={props.friend.id}>
             <p>{props.friend.name}</p>
-            <FontAwesomeIcon
-                icon={props.friend.is_favorite ? "star" : ["far", "star"]}
-                onClick={() => favoriteClickHandler(props.friend.id, props.friend.is_favorite)}
-            />
-            <FontAwesomeIcon 
-                icon={"trash"} 
-                onClick={() => deleteClickHandler(props.friend.id)}
-            />
+            <div className={styles.icons}>
+                <FontAwesomeIcon
+                    icon={props.friend.is_favorite ? "star" : ["far", "star"]}
+                    className={props.friend.is_favorite ? styles.favorite : styles.general}
+                    onClick={() => favoriteClickHandler(props.friend.id, props.friend.is_favorite)}
+                    title={props.friend.is_favorite ? "Remove from favorites" : "Add as a favorite"}
+                />
+                <FontAwesomeIcon 
+                    icon={"trash"} 
+                    onClick={() => deleteClickHandler(props.friend.id)}
+                    className={styles.delete}
+                    title={"Remove friend"}
+                />
+            </div>
         </div>
     )
 }

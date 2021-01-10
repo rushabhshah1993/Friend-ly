@@ -1,5 +1,41 @@
-.friend {
+@import './../../../utils/variables.scss';
+
+.friendContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    border: 1px solid #EAEAEA;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    padding: 16px;
+
+    p {
+        margin: 0;
+        font-size: 21px;
+        font-family: 'Light';
+    }
+
+    .icons {
+        svg {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .favorite {
+            color: #FFD700;
+            filter: drop-shadow(0 0 5px #FFD700);
+            margin-right: 8px;
+        }
+
+        .delete {
+            color: #E2E2E3;
+        }
+    }
+}
+
+.friendContainer:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }

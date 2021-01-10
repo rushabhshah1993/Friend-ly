@@ -39,7 +39,7 @@ const Pagination = props => {
                 </li>
             );
         }
-    }
+    } else if(typeof props.children === 'string') friends = props.children;
 
     return (
         <>

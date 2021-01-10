@@ -35,7 +35,7 @@
 (max-width: $breakpoint-phone) {
     .pagination {
         position: absolute;
-        bottom: 0;
+        bottom: 10px;
         width: 100%;
         display: flex;
         flex-direction: row;
