@@ -11,7 +11,10 @@ const NewFriend = props => {
     }
 
     const keyPressHandler = event => {
-        if(event.which === 13) props.addNewFriend(inputValue);
+        if(event.which === 13) {
+            props.addNewFriend(inputValue);
+            setInputValue('');
+        }
     }
 
     return (

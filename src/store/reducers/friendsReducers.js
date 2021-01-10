@@ -3,7 +3,8 @@ import * as actions from './../actions/actionTypes';
 const initalState = {
     allFriends: {},
     loading: false,
-    searchTerm: ''
+    searchTerm: '',
+    itemsPerPage: 4
 }
 
 const reducer = (state = initalState, action) => {

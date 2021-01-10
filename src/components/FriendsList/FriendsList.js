@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { getFriendsList } from './../../store/actions/friendsActions';
 
+import Pagination from '../Pagination/Pagination';
 import Friend from './Friend/Friend';
 
 const FriendsList = props => {
@@ -34,9 +35,9 @@ const FriendsList = props => {
     }
 
     return (
-        <div>
+        <Pagination itemsPerPage={props.friends.itemsPerPage}>
             {friendsElement}
-        </div>
+        </Pagination>
     )
 }
 
