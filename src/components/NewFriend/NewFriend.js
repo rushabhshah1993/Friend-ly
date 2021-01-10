@@ -1,8 +1,10 @@
-import { add } from 'lodash';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import { addNewFriend } from './../../store/actions/friendsActions';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styles from './NewFriend.scss';
 
 const NewFriend = props => {
     const [inputValue, setInputValue] = useState('');
@@ -18,14 +20,15 @@ const NewFriend = props => {
     }
 
     return (
-        <div>
+        <div className={styles.newFriendContainer}>
             <input 
                 type="text" 
-                placeholder={"Enter your friend's name..."}
+                placeholder={"Add a new friend..."}
                 onChange={textChangeHandler}
                 onKeyPress={keyPressHandler}
                 value={inputValue}
             />
+            <FontAwesomeIcon icon={"user-plus"} />
         </div>
     )
 }

@@ -1,0 +1,20 @@
+@import './../../utils/variables.scss';
+
+.newFriendContainer {
+    display: flex;
+    flex-direction: row;
+
+    input {
+        margin-right: 8px;
+        border: 0px;
+        border-bottom: 1px solid #EEEEEE;
+        font-size: 16px;
+        font-family: 'Light';
+        width: 100%;
+    }
+
+    input:focus {
+        border-bottom-color: $primary-color;
+        outline: none;
+    }
+}
