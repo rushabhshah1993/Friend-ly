@@ -10,7 +10,11 @@ const Search = props => {
 
     return (
         <div>
-            <input type="text" onChange={inputChangeHandler} />
+            <input 
+                type="text" 
+                onChange={inputChangeHandler} 
+                placeholder={"Search..."}
+            />
         </div>
     )
 }

@@ -1,6 +1,10 @@
 import axios from "axios";
+import { cloneDeep } from 'lodash';
 
 import * as actions from './actionTypes';
+import store from './../store';
+
+import { createNewId } from './../../utils';
 
 export const getFriendsList = () => {
     return dispatch => {
@@ -42,6 +46,27 @@ export const toggleFavorite = (id, value) => {
             return axios.get('https://friend-ly-d2f6b-default-rtdb.firebaseio.com/allFriends.json')
         }).then(response => {
             dispatch(setFriends(response.data));
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+}
+
+export const addNewFriend = name => {
+    return dispatch => {
+        let allFriends = cloneDeep(store.getState()?.friends?.allFriends);
+        let newFriend = {
+            id: createNewId(allFriends),
+            is_favorite: false,
+            name: name
+        };
+        allFriends[newFriend.id] = newFriend;
+        
+        axios.put(
+            'https://friend-ly-d2f6b-default-rtdb.firebaseio.com/allFriends.json',
+            allFriends
+        ).then(() => {
+            dispatch(getFriendsList());
         }).catch(error => {
             console.log(error);
         })
