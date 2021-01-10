@@ -25,7 +25,7 @@ const Pagination = props => {
 
     const paginationClickHandler = page => setCurrentPage(page);
 
-    if(typeof props.children === 'object' && noOfPages && noOfPages > 1) {
+    if(typeof props.children === 'object' && noOfPages && noOfPages > 0) {
         friends = props.children.filter((friend, index) => 
             Math.ceil((index+1)/props.itemsPerPage) === currentPage);
         for(let i=1; i<=noOfPages; i++) {
