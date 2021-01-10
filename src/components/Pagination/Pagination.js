@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import styles from './Pagination.scss';
+
 const Pagination = props => {
     const [noOfPages, setNoOfPages] = useState(0);
     const [currentPage, setCurrentPage] = useState('');
@@ -28,7 +30,13 @@ const Pagination = props => {
             Math.ceil((index+1)/props.itemsPerPage) === currentPage);
         for(let i=1; i<=noOfPages; i++) {
             pagination.push(
-                <li key={i} onClick={() => paginationClickHandler(i)}>{i}</li>
+                <li 
+                    key={i} 
+                    onClick={() => paginationClickHandler(i)}
+                    className={i === currentPage ? styles.active : styles.pageNumber}
+                >
+                    {i}
+                </li>
             );
         }
     }
@@ -36,7 +44,7 @@ const Pagination = props => {
     return (
         <>
             {friends}
-            <ul>{pagination}</ul>
+            <ul className={styles.pagination}>{pagination}</ul>
         </>
     )
     

@@ -4,7 +4,7 @@ import { cloneDeep } from 'lodash';
 import * as actions from './actionTypes';
 import store from './../store';
 
-import { createNewId } from './../../utils';
+import { createNewId } from './../../utils/utils';
 
 export const getFriendsList = () => {
     return dispatch => {

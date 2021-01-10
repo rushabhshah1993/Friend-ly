@@ -1,0 +1,19 @@
+@mixin font($font-name) {
+    @font-face {
+        font-family: $font-name;
+        src: url('./assets/fonts/Roboto-' + $font-name + '.ttf')
+            format('truetype')
+    }
+}
+
+@include font('Bold');
+@include font('Regular');
+@include font('Thin');
+@include font('Light');
+
+html {
+    * {
+        font-family: 'Regular';
+        box-sizing: border-box;
+    }
+}

@@ -10,6 +10,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { faStar, faTrash } from '@fortawesome/free-solid-svg-icons';
 
+import './index.scss';
+
 library.add(faStar, farStar, faTrash);
 
 const main = (
