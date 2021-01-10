@@ -1,7 +1,10 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { connect } from 'react-redux';
 
 import { setSearchTerm } from './../../store/actions/friendsActions';
+
+import styles from './Search.scss';
 
 const Search = props => {
     const inputChangeHandler = event => {
@@ -9,11 +12,13 @@ const Search = props => {
     }
 
     return (
-        <div>
+        <div className={styles.searchContainer}>
+            <FontAwesomeIcon icon="search" className={styles.icon} />
             <input 
                 type="text" 
                 onChange={inputChangeHandler} 
-                placeholder={"Search..."}
+                placeholder={"Find a friend..."}
+                className={styles.searchBar}
             />
         </div>
     )

@@ -1,0 +1,44 @@
+@import './../../utils/variables.scss';
+
+.searchContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+    width: 100%;
+
+    .icon {
+        margin-right: 8px;
+    }
+
+    input {
+        border: 0px;
+        border-bottom: 1px solid #EEEEEE;
+        font-size: 16px;
+        font-family: 'Light';
+        width: 100%;
+    }
+    
+    input:focus + .icon {
+        color: $primary-color !important;
+    }
+
+    input:focus {
+        border-bottom-color: $primary-color;
+        outline: none;
+    }
+}
+
+@media screen and
+(max-width: $breakpoint-phone) {
+    .searchContainer {
+        width: 100%;
+
+        .icon {
+            margin-right: 8px;
+        }
+
+        input {
+            width: 100%;
+        }
+    }
+}
