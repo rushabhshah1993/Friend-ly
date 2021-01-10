@@ -19,8 +19,13 @@ const FriendsList = props => {
     else if(!props.friends.loading && 
         Object.keys(allFriends).length > 0 &&
         props.friends.searchTerm.length === 0) {
-            friendsElement = Object.values(allFriends).map(friend => 
-                <Friend friend={friend} key={friend.id} />);
+            let favoriteFriends = Object.values(allFriends)
+                                .filter(friend => friend.is_favorite)
+                                .map(friend => <Friend friend={friend} key={friend.id} />);
+            let generalFriends = Object.values(allFriends)
+                            .filter(friend => !friend.is_favorite)
+                            .map(friend => <Friend friend={friend} key={friend.id} />);
+            friendsElement = [...favoriteFriends, ...generalFriends];
     } else {
         let filteredFriends = Object.values(allFriends).filter(friend => 
             friend.name.includes(props.friends.searchTerm));
