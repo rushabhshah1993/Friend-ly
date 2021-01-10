@@ -10,19 +10,19 @@ const FriendsList = props => {
     let friendsElement = `You don't have any friends!`
 
     useEffect(() => {
-        if(!props.friends.loading && allFriends.length === 0) {
+        if(!props.friends.loading && Object.keys(allFriends).length === 0) {
             props.fetchFriends();
         }
     }, [])
 
     if(props.friends.loading) friendsElement = `Loading...`; 
     else if(!props.friends.loading && 
-        allFriends.length > 0 &&
+        Object.keys(allFriends).length > 0 &&
         props.friends.searchTerm.length === 0) {
-        friendsElement = allFriends.map(friend => 
-            <Friend friend={friend} key={friend.id} />);
+            friendsElement = Object.values(allFriends).map(friend => 
+                <Friend friend={friend} key={friend.id} />);
     } else {
-        let filteredFriends = allFriends.filter(friend => 
+        let filteredFriends = Object.values(allFriends).filter(friend => 
             friend.name.includes(props.friends.searchTerm));
         friendsElement = filteredFriends.map(friend =>
             <Friend friend={friend} key={friend.id} />);

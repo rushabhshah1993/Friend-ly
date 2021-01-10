@@ -1,7 +1,7 @@
 import * as actions from './../actions/actionTypes';
 
 const initalState = {
-    allFriends: [],
+    allFriends: {},
     loading: false,
     searchTerm: ''
 }

@@ -5,13 +5,10 @@ import * as actions from './actionTypes';
 export const getFriendsList = () => {
     return dispatch => {
         dispatch(loadingFriends());
-        axios.get('https://friend-ly-d2f6b-default-rtdb.firebaseio.com/friends.json')
+        
+        axios.get('https://friend-ly-d2f6b-default-rtdb.firebaseio.com/allFriends.json')
             .then(response => {
-                let data = Object.values(response.data)[0];
-                if(data.length) dispatch(setFriends(data));
-            })
-            .catch(error => {
-                console.log(error);
+                if(Object.keys(response.data).length) dispatch(setFriends(response.data));
             })
     }
 }
@@ -33,5 +30,20 @@ export const setSearchTerm = term => {
     return {
         type: actions.SET_SEARCH_TERM,
         term: term
+    }
+}
+
+export const toggleFavorite = (id, value) => {
+    return dispatch => {
+        axios.patch(
+            `https://friend-ly-d2f6b-default-rtdb.firebaseio.com/allFriends/${id}.json`, 
+            {is_favorite : !value}
+        ).then(() => {
+            return axios.get('https://friend-ly-d2f6b-default-rtdb.firebaseio.com/allFriends.json')
+        }).then(response => {
+            dispatch(setFriends(response.data));
+        }).catch(error => {
+            console.log(error);
+        })
     }
 }
